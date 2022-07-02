@@ -6,7 +6,7 @@ import time
 
 s = socket.socket()
 
-host = '159.89.165.63'
+host = '192.168.1.16'
 port = 9999
 
 s.connect((host, port))

