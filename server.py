@@ -58,7 +58,7 @@ def accept_sockets():
             all_addresses.append(address)
 
         except:
-            print("error occured accepting connection")
+            print("error occured accepting connection") 
 
 
 # Making a shell to choose from connected targets
