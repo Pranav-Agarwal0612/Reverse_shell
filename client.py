@@ -35,5 +35,5 @@ while True:
 
     except os.error as message:
         currentWD = os.getcwd() + "> "
-        s.send(str.encode(message + '\n' + currentWD))
+        s.send(str.encode(str(message) + '\n' + str(currentWD)))
         
