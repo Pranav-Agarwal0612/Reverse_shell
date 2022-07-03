@@ -169,7 +169,6 @@ def send_target_commands(conn):
 def create_jobs():
     for i in range(NUMBER_OF_THREADS):
         queue.put(i+1)
-        print(str(i+1))
 
     queue.join()
 
@@ -180,7 +179,6 @@ def create_threads():
         t = threading.Thread(target=work)
         t.daemon = True
         t.start()
-        print(t)
 
 
 def work():
