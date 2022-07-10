@@ -3,7 +3,7 @@ A python script which allows an operator to control multiple client devices remo
 
 ## how to use?
 
-1. Run the server.py script on your server and keep it active to listen or incoming connections.
+1. Run the server.py script on your server and keep it active to listen for incoming connections.
 2. Enter your server IP address in client file as 'host' variable
 3. Run the client.py script on client's device.
 
