@@ -25,22 +25,21 @@ turtle> list
 turtle> select 0
 
 You are now connected to target
-path/to/client/file/on/client/device>
+path/to/client/pwd>
 ```
 
 -   Run a command on client
 
 ```
-path/to/client/file/on/client/device> ls
+path/to/client/pwd> cd ..
 
-client.py
-**Other files and folders**
+path/to/client>
 ```
 
 -   Go back to turtle
 
 ```
-path/to/client/file/on/client/device> quit
+path/to/client/pwd> quit
 
 turtle>
 ```
@@ -54,7 +53,7 @@ turtle> exit
 -   Close connection with a single client
 
 ```
-path/to/client/file/on/client/device> exit
+path/to/client/pwd> exit
 
 turtle>
 ```
