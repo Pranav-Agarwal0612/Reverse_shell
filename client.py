@@ -5,7 +5,7 @@ import sys
 
 s = socket.socket()
 
-host = '159.223.85.70'
+host = ''
 port = 9999
 
 s.connect((host, port))
